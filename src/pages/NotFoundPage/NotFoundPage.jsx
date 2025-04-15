@@ -1,9 +1,14 @@
 import s from "./NotFoundPage.module.css";
+import { FaRegFaceSadTear } from "react-icons/fa6";
+
 const NotFoundPage = () => {
   return (
-    <h1 className={s.header}>
-      Page not found.Plese change your search query or try again later{" "}
-    </h1>
+    <>
+      <h1 className={s.header}>
+        Page not found.Plese change your search query or try again later
+        <FaRegFaceSadTear />
+      </h1>
+    </>
   );
 };
 
