@@ -39,11 +39,13 @@
   color: #66a266;
   text-decoration: none;
   transition: all 250ms linear;
+  margin-bottom: 50px;
 }
 .active {
   color: #253d25;
   font-size: 26px;
   text-decoration: none;
+  margin-bottom: 50px;
 }
 @media (min-width: 768px) {
   .poster {

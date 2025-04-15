@@ -10,7 +10,13 @@ const SearchBar = ({ onSubmit }) => {
   };
 
   return (
-    <Formik initialValues={initialValues} onSubmit={onSubmit}>
+    <Formik
+      initialValues={initialValues}
+      onSubmit={(values, { resetForm }) => {
+        onSubmit(values);
+        resetForm();
+      }}
+    >
       <Form className={s.formWrapper}>
         <Field className={s.formInput} type="text" name="query" />
         <button className={s.button} type="submit">

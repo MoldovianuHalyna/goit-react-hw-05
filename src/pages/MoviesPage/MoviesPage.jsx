@@ -4,6 +4,7 @@ import { searchFilmFetcher } from "../../fetcherApi";
 import MovieList from "../../components/MovieList/MovieList";
 import Loader from "../../components/Loader/Loader";
 import { useSearchParams } from "react-router-dom";
+import NotFoundPage from "../NotFoundPage/NotFoundPage";
 
 const MoviesPage = () => {
   const [searchedFilm, setSearchedFilm] = useState([]);
@@ -37,7 +38,9 @@ const MoviesPage = () => {
   return (
     <div>
       {loading && <Loader />}
+
       <SearchBar onSubmit={handleSearchBarSubmit} />
+      {!loading && query && searchedFilm.length === 0 && <NotFoundPage />}
       <MovieList movies={searchedFilm} />
     </div>
   );
