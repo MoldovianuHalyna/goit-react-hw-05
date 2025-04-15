@@ -1,5 +1,11 @@
-import { useEffect, useState } from "react";
-import { Link, NavLink, Outlet, useParams } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import {
+  Link,
+  NavLink,
+  Outlet,
+  useLocation,
+  useParams,
+} from "react-router-dom";
 import { oneFilmFetcher } from "../../fetcherApi";
 import s from "./MovieDetailsPage.module.css";
 
@@ -7,6 +13,9 @@ const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [film, setFilm] = useState({});
   const [loading, setLoading] = useState(true);
+  const location = useLocation();
+
+  const goBackLink = useRef(location.state?.from || "/movies");
 
   const addActive = ({ isActive }) => (isActive ? s.active : s.link);
 
@@ -30,6 +39,9 @@ const MovieDetailsPage = () => {
   const userScore = Math.ceil(film.vote_average);
   return (
     <>
+      <Link className={s.linkBack} to={goBackLink.current}>
+        Go back
+      </Link>
       <div className={s.containerDetails}>
         <img
           className={s.poster}
@@ -55,6 +67,7 @@ const MovieDetailsPage = () => {
           Reviews
         </NavLink>
       </nav>
+      {loading && <Loader />}
       <Outlet />
     </>
   );

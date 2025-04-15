@@ -19,3 +19,24 @@ export const oneFilmFetcher = async (filmId) => {
     options
   );
 };
+
+export const searchFilmFetcher = async (query) => {
+  return await axios.get(
+    `https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=1&api_key=${apiKey}`,
+    options
+  );
+};
+
+export const castFetcher = async (filmId) => {
+  return await axios.get(
+    `https://api.themoviedb.org/3/movie/${filmId}/credits?language=en-US&api_key=${apiKey}`,
+    options
+  );
+};
+
+export const reviewsFetcher = async (filmId) => {
+  return await axios.get(
+    `https://api.themoviedb.org/3/movie/${filmId}/reviews?language=en-US&page=1&api_key=${apiKey}`,
+    options
+  );
+};

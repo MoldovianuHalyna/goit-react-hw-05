@@ -4,7 +4,7 @@
   align-items: center;
   column-gap: 30px;
   font-size: 20px;
-  background: linear-gradient(#66a266, #2a442a);
+  background: linear-gradient(#66a2667d, #2a442ad6);
   box-shadow: 0px 2px 10px 1px #2a442a;
   padding: 30px;
   margin-top: 0;
@@ -13,7 +13,7 @@
   left: 0;
 }
 .link {
-  color: #66a266;
+  color: #bad4ba;
   text-decoration: none;
   transition: all 250ms linear;
   padding: 5px;
