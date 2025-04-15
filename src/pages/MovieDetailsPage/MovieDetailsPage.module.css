@@ -33,7 +33,7 @@
 }
 .active {
   color: #253d25;
-  font-size: 30px;
+  font-size: 26px;
   text-decoration: none;
 }
 @media (min-width: 768px) {

@@ -20,9 +20,17 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
+.link {
+  text-decoration: none;
+}
 .list-item {
   padding-left: 0;
 }
 .poster {
   width: 300px;
+}
+.title {
+  box-shadow: 0px 4px 4px -2px #2f6235;
+  color: #000000;
+  font-size: 20px;
 }

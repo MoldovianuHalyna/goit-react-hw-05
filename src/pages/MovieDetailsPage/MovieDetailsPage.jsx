@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, Outlet, useParams } from "react-router-dom";
+import { Link, NavLink, Outlet, useParams } from "react-router-dom";
 import { oneFilmFetcher } from "../../fetcherApi";
 import s from "./MovieDetailsPage.module.css";
 
@@ -7,6 +7,8 @@ const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const [film, setFilm] = useState({});
   const [loading, setLoading] = useState(true);
+
+  const addActive = ({ isActive }) => (isActive ? s.active : s.link);
 
   useEffect(() => {
     const getMovie = async () => {
@@ -46,12 +48,12 @@ const MovieDetailsPage = () => {
         </div>
       </div>
       <nav className={s.navigation}>
-        <Link className={s.link} to="cast">
+        <NavLink className={addActive} to="cast">
           Cast
-        </Link>
-        <Link className={s.link} to="reviews">
+        </NavLink>
+        <NavLink className={addActive} to="reviews">
           Reviews
-        </Link>
+        </NavLink>
       </nav>
       <Outlet />
     </>
